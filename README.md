@@ -5,25 +5,25 @@ Please start by initiating a Nuxt project and then installing the Nuxt Image Com
 Once that is all set up, go to your index.vue file in your pages folder.  Erase what is currently there and start fresh with a div tag.  Like this:
 
 
-    ```<template>
+    <template>
       <div>
       </div>
-    </template>```
+    </template>
 
 You can add some sections for a headline and text at the top of your page.  Here is an example of adding this with some Tailwind CSS:
 
 
-    ```<template>
+    <template>
       <div>
         <h1 class="title-font sm:text-4xl text-3xl m-4 font-medium text-gray-900">Example using the Nuxt Image Component</h1>
         <p class="m-4 leading-relaxed">Optimize your images with imgix in your Nuxt Image Component.</p>
       </div>
-    </template>```
+    </template>
 
 Next, we can focus on adding a flex div to include your images and the nuxt-img tag.  
 
 
-    ```<template>
+    <template>
       <div>
         <h1 class="title-font sm:text-4xl text-3xl m-4 font-medium text-gray-900">Example using the Nuxt Image Component</h1>
         <p class="m-4 leading-relaxed">Optimize your images with imgix in your Nuxt Image Component.</p>
@@ -34,19 +34,19 @@ Next, we can focus on adding a flex div to include your images and the nuxt-img 
           />
         </div>
       </div>
-    </template>```
+    </template>
 
 Now we can add as many images inside of the flex div as we would like for our gallery.  For the next code example, I will focus on just the `<nuxt-img />` tag.
 
 
-    ```<nuxt-img
+    <nuxt-img
       class="float-left p-2 m-auto w-full lg:w-1/2 xl:w-1/3 2xl:w-1/3"
       provider="imgix"
       src=""
       sizes="xs:98vw sm:98vw md:98vw lg:49vw xl:31vw 2xl:31vw"
       fit="crop"
       :modifiers="{ auto: 'format,compress', ar: '1:1' }"
-    />```
+    />
 
 I have included in 2 places info about the sizing that will help my responsive design. First, in the class section.  Again, just a reminder, this is an example of using Tailwind CSS. If this is your first time encountering it, I really do suggest checking out their documentation.  On XL and 2XL size screens, the images will be viewed in css at 33% the size of the screen. Between 1024 px and 1280 px size screens, the images will be viewed in css at 50% the size of the screen. Then any screen
  smaller than 1024px wide will be viewed at 100% the size of the screen.  I have also replicated this same idea in the `sizes` attribute, which tells the Nuxt Image Component to generate resized versions for each of these scenarios.
@@ -56,7 +56,7 @@ I have included in 2 places info about the sizing that will help my responsive d
  For my list of images, they are conveniently named 1 through 6, so I will place them in my `script` section of my index.vue:
  
 
-    ```<script>
+    <script>
     export default {
       data() {
         return {
@@ -71,12 +71,12 @@ I have included in 2 places info about the sizing that will help my responsive d
         }
       }
     }
-    </script>```
+    </script>
 
 I can now access these images using a v-for in my `<nuxt-img>`.  In order to do that, here is how I am modifying my tag:
 
 
-    ```<nuxt-img
+    <nuxt-img
       class="float-left p-2 m-auto w-full lg:w-1/2 xl:w-1/3 2xl:w-1/3"
       v-for="(image, index) in images"
       :key="index"
@@ -85,6 +85,6 @@ I can now access these images using a v-for in my `<nuxt-img>`.  In order to do 
       sizes="xs:98vw sm:98vw md:98vw lg:49vw xl:31vw 2xl:31vw"
       fit="crop"
       :modifiers="{ auto: 'format,compress', ar: '1:1' }"
-    />```
+    />
 
 This will loop through my 6 images, creating a responsive img tag for each of them in my gallery.  This is a rather simple idea of using a v-for, but hopefully gives you the idea of how quickly this can be used on a large amount of images.
