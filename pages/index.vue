@@ -22,12 +22,12 @@ export default {
   data() {
     return {
       images: [
-        '/artsy/1.jpg?',
-        '/artsy/2.jpg?',
-        '/artsy/3.jpg?',
-        '/artsy/4.jpg?',
-        '/artsy/5.jpg?',
-        '/artsy/6.jpg?'
+        '/artsy/1.jpg',
+        '/artsy/2.jpg',
+        '/artsy/3.jpg',
+        '/artsy/4.jpg',
+        '/artsy/5.jpg',
+        '/artsy/6.jpg'
       ]
     }
   }
