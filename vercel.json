@@ -11,7 +11,7 @@
           "src": "/*",
             "headers": {
               "Accept-CH": "DPR, Width, Viewport-Width",
-              "Feature-Policy": "ch-dpr https://nuxt-image.vercel.app 'self'; ch-width https://nuxt-image.vercel.app 'self'; ch-viewport-width https://nuxt-image.vercel.app 'self'"
+              "Feature-Policy": "ch-dpr https://tom.imgix.net 'self'; ch-width https://tom.imgix.net 'self'; ch-viewport-width https://tom.imgix.net 'self'"
             }
         }
       ]
