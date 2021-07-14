@@ -5,5 +5,14 @@
         "use": "@nuxtjs/vercel-builder",
         "config": {}
         }
-    ]
+    ],
+    "routes": [
+        {
+          "src": "/*",
+            "headers": {
+              "Accept-CH": "DPR, Width, Viewport-Width",
+              "Feature-Policy": "ch-dpr https://nuxt-image.vercel.app 'self'; ch-width https://nuxt-image.vercel.app 'self'; ch-viewport-width https://nuxt-image.vercel.app 'self'"
+            }
+        }
+      ]
 }
